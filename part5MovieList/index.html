@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Movie List App</title>
+  </head>
+  <body>
+    <!-- Main Content for the page -->
+    <main class="container">
+      <!-- H1 - page header -->
+      <h1>Movie List App</h1>
+
+      <!-- Section search / sorting -->
+      <section>
+        <!-- Section heading -->
+        <h2>Search for a Movie</h2>
+        <!-- Form to get the search string -->
+        <form id="form-list-control">
+          <div class="mb-3">
+            <input type="text" placeholder="Movie title" name="search-string" />
+            <button style="margin: 5px" type="button" onclick="searchClick()">
+              Search
+            </button>
+          </div>
+          <!-- Buttons to run Search and sort functions -->
+          <div class="mb-3">
+            <button type="button" onclick="searchByIdClick()">
+              Search by ID
+            </button>
+            <button type="button" onclick="sortByRating()">
+              Sort by Rating (High to Low)
+            </button>
+            <button type="button" onclick="a2zClick()">A - Z</button>
+            <button type="button" onclick="z2aClick()">Z - A</button>
+            <button type="button" onclick="refreshList()">Refresh List</button>
+          </div>
+        </form>
+        <div id="search-message"></div>
+      </section>
+      <!-- End of the Search / sorting section -->
+
+      <!-- Movie list section -->
+      <section id="mList">
+        <h2>Movie List</h2>
+        <!-- Movie list start -->
+        <ol class="list" id="list"></ol>
+        <!-- Movie List end -->
+      </section>
+      <!-- End of Movie list section -->
+
+      <!-- Tab section -->
+      <section class="tab">
+        <!-- Buttons to change tabs -->
+        <button
+          class="tablinks"
+          onclick="openForm(event, 'Add')"
+          id="defaultOpen"
+          class="active"
+        >
+          Add a New Movie
+        </button>
+        <button class="tablinks" onclick="openForm(event, 'Update')">
+          Update a Movie
+        </button>
+        <button class="tablinks" onclick="openForm(event, 'Delete')">
+          Delete a Movie
+        </button>
+      </section>
+      <!-- End of tab section -->
+
+      <!-- Tab content section -->
+      <!-- The tab content is made up of add movie / update movie and delete movie sections -->
+
+      <!-- Add Movie section -->
+      <section id="Add" class="tabcontent">
+        <h2>Add a Movie</h2>
+        <form id="form-add">
+          <div class="mb-3">
+            <label for="addTitle">Movie ID:</label>
+            <input
+              type="text"
+              placeholder="Movie ID..."
+              name="movieId"
+              id="addId"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="addTitle">Title:</label>
+            <input
+              type="text"
+              placeholder="Title..."
+              name="title"
+              id="addTitle"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="addYear">Year:</label>
+            <input type="text" placeholder="Year..." name="year" id="addYear" />
+          </div>
+
+          <div class="mb-3">
+            <label for="addRating">Rating:</label>
+            <input
+              type="text"
+              placeholder="Rating..."
+              name="rating"
+              id="addRating"
+            />
+          </div>
+          <button type="button" name="submit" onclick="addClick()">
+            Add Movie
+          </button>
+        </form>
+      </section>
+      <!-- End add movie section -->
+
+      <!-- Update Movie section -->
+      <section id="Update" class="tabcontent">
+        <h2>Update a Movie</h2>
+        <form id="form-update">
+          <div class="mb-3">
+            <label for="upIndex">Index:</label>
+            <input
+              type="text"
+              placeholder="Index..."
+              name="index"
+              id="upIndex"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="upTitle">Title:</label>
+            <input
+              type="text"
+              placeholder="Title..."
+              name="title"
+              id="upTitle"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="upYear">Year:</label>
+            <input type="text" placeholder="Year..." name="year" id="upYear" />
+          </div>
+          <div class="mb-3">
+            <label for="upRating">Rating:</label>
+            <input
+              type="text"
+              placeholder="Rating..."
+              name="rating"
+              id="upRating"
+            />
+          </div>
+          <button type="button" name="submit" onclick="updateClick()">
+            Update Movie
+          </button>
+        </form>
+      </section>
+      <!-- End Update Movie section -->
+
+      <!-- Delete Movie section -->
+      <section id="Delete" class="tabcontent">
+        <h2>Delete a Movie</h2>
+        <form id="form-delete">
+          <div class="mb-3">
+            <label for="delIndex">Index:</label>
+            <input
+              type="text"
+              placeholder="Index..."
+              name="index"
+              id="delIndex"
+            />
+          </div>
+          <button type="button" name="submit" onclick="deleteClick()">
+            Delete a Movie
+          </button>
+        </form>
+      </section>
+      <!-- End Delete Movie section -->
+
+      <!-- Footer -->
+      <footer>
+        <div>
+          <p>
+            Movie List - Copyright &copy;
+            <span id="date"></span>
+            - Image Sourced from
+            <a href="https://www.pexels.com/" target="_blank"> Pexels</a>
+          </p>
+        </div>
+      </footer>
+      <!-- End of footer -->
+    </main>
+    <!-- End of main content -->
+
+    <!-- Load in scripts -->
+    <script src="./js/movie-list.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
