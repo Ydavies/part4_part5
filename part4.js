@@ -20,3 +20,13 @@ const movieList = [
   new Movie("1", "The Matrix", "1999", "8.7"),
   new Movie("8", "Interstellar", "2014", "8.7"),
 ];
+
+console.log(movieList);
+
+// const movieSorted = movieList.sort((a, b) => a.movieID - b.movieID);
+// console.log(movieSorted);
+
+// After not being able to get the array to sort i found that it was sorting it by a string and not a number, so i changed it to parseInt which converts the string to a number.
+
+movieList.sort((a, b) => parseInt(a.movieID) - parseInt(b.movieID));
+console.log(movieList);
