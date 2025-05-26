@@ -54,3 +54,11 @@ function movieIdsearch(movieList, movieId) {
   }
   return found;
 }
+// Calling the function
+const result = movieIdsearch(movieList, Result);
+// Output of result
+if (result == -1) {
+  console.log(`Result: null`);
+} else {
+  console.log(`The Movie of ${Result} was found at index ${result}`);
+}
