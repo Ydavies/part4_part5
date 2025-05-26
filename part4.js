@@ -30,3 +30,27 @@ console.log(movieList);
 
 movieList.sort((a, b) => parseInt(a.movieID) - parseInt(b.movieID));
 console.log(movieList);
+
+
+// What are we searching for?
+let Result = "21";
+// creating a search function
+function movieIdsearch(movieList, movieId) {
+  // if not found then we set the value to -1
+  let found = -1;
+  // console.log(`Array: ${movieList}`);
+  console.log(`Searching for: Movie ${movieId}`);
+  //Search the array by creating a loop
+  for (let i = 0; i < movieList.length; i++) {
+
+    // we can uncomment the below code if we want to show a console log of each search process that is completed.
+    // console.log(`movieList[${i}]: ${movieList[i].movieId}`);
+
+    if (movieList[i].movieId === movieId) {
+      found = i;
+      // end the loop
+      break;
+    }
+  }
+  return found;
+}
