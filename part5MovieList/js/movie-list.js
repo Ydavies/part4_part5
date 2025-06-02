@@ -78,18 +78,19 @@ class MovieList {
   }
 
   // Update function - update a movie
-  update(index, movieId, title, year, rating) {
-    if (index >= 0 && index < this.movieList.length) {
-      // Update the title
-      this.movieList[index].title = title;
-      // Update the year
-      this.movieList[index].year = year;
-      // Update the movieID
-      this.movieList[index].movieId = movieId;
-      // Update the Rating
-      this.movieList[index].rating = rating;
-      // Refresh the list.
-      this.refresh();
+  update(targetMovieId, newTitle, newYear, newRating) {
+    const foundIndex = this.movieList.findIndex(movie => movie.movieId === targetMovieId);
+    if (foundIndex !== -1) { 
+
+  this.movieList[foundIndex].title = newTitle;
+    this.movieList[foundIndex].year = newYear;
+    this.movieList[foundIndex].rating = newRating; 
+
+    this.refresh(); // Refresh the list display
+
+    document.getElementById("search-message").textContent = `Movie with ID ${targetMovieId} updated!`;
+  } else {
+    console.log("No movie found")
     }
   }
 
@@ -97,7 +98,6 @@ class MovieList {
   delete(index) {
     if (index >= 0 && index < this.movieList.length) {
       // Remove one movie from the array
-      // Note: we should really test the index here
       // Test for out of bounds.
       this.movieList.splice(index, 1);
       // Refresh
