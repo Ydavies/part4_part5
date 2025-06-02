@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
     <title>Movie List App</title>
   </head>
   <body>
@@ -30,7 +33,7 @@
               Search by ID
             </button>
             <button type="button" onclick="sortByRating()">
-              Sort by Rating (High to Low)
+              Rating Sort (High to Low)
             </button>
             <button type="button" onclick="a2zClick()">A - Z</button>
             <button type="button" onclick="z2aClick()">Z - A</button>
@@ -70,18 +73,16 @@
       </section>
       <!-- End of tab section -->
 
-      <!-- Tab content section -->
-      <!-- The tab content is made up of add movie / update movie and delete movie sections -->
 
       <!-- Add Movie section -->
       <section id="Add" class="tabcontent">
         <h2>Add a Movie</h2>
         <form id="form-add">
           <div class="mb-3">
-            <label for="addTitle">Movie ID:</label>
+            <label for="addTitle">Index:</label>
             <input
               type="text"
-              placeholder="Movie ID..."
+              placeholder="Movie Index..."
               name="movieId"
               id="addId"
             />
@@ -122,12 +123,11 @@
         <h2>Update a Movie</h2>
         <form id="form-update">
           <div class="mb-3">
-            <label for="upIndex">Index:</label>
+            <label for="updateMovieId">ID:</label>
             <input
               type="text"
-              placeholder="Index..."
-              name="index"
-              id="upIndex"
+              placeholder="Enter Movie ID to update..."
+              name="updateMovieId" id="updateMovieIdInput"
             />
           </div>
           <div class="mb-3">
@@ -187,6 +187,7 @@
             <span id="date"></span>
             - Image Sourced from
             <a href="https://www.pexels.com/" target="_blank"> Pexels</a>
+            <a href="https://www.freepik.com/free-vector/cinema-elements-set_9386631.htm#fromView=search&page=1&position=31&uuid=df8f841d-2d75-43c4-be86-a9c190d8d4d0&query=movie" target="_blank">Image by freepik</a>
           </p>
         </div>
       </footer>

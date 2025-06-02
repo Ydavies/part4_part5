@@ -115,24 +115,22 @@ function addClick() {
 function updateClick() {
   // Get the add form elements from the DOM
   let formElements = document.getElementById("form-update").elements;
-  // Get the index from the form
-  let index = formElements["index"].value - 1;
+  // Get the movie ID from the form
+   let targetMovieId = document.getElementById("updateMovieIdInput").value;
   // Get the movie title from the form
   let title = formElements["title"].value;
   // Get the year from the form
   let year = formElements["year"].value;
-  // Get the movie ID and rating
-  let movieId = formElements["movieId"].value;
   // Get the Rating from the form
   let rating = formElements["rating"].value;
 
   // Save the new movie into the lsit.
-  movieList.update(index, movieId, title, Number(year), rating);
+  movieList.update(targetMovieId, title, Number(year), rating);
   // Clear the input fields
-  formElements.index.value = "";
+ // Also update the clear input lines if you removed the movieId input:
+  document.getElementById("updateMovieIdInput").value = "";
   formElements.title.value = "";
   formElements.year.value = "";
-  formElements.movieId.value = "";
   formElements.rating.value = "";
 }
 
