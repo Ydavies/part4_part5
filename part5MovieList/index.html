@@ -13,6 +13,7 @@
     <!-- Main Content for the page -->
     <main class="container">
       <!-- H1 - page header -->
+       
       <h1>Movie List App</h1>
 
       <!-- Section search / sorting -->
@@ -53,6 +54,8 @@
       </section>
       <!-- End of Movie list section -->
 
+      <div id="crud-message"></div>
+      <section class="tab">
       <!-- Tab section -->
       <section class="tab">
         <!-- Buttons to change tabs -->
@@ -79,10 +82,10 @@
         <h2>Add a Movie</h2>
         <form id="form-add">
           <div class="mb-3">
-            <label for="addTitle">Index:</label>
+            <label for="addTitle">Movie ID:</label>
             <input
               type="text"
-              placeholder="Movie Index..."
+              placeholder="Movie ID..."
               name="movieId"
               id="addId"
             />
@@ -123,7 +126,7 @@
         <h2>Update a Movie</h2>
         <form id="form-update">
           <div class="mb-3">
-            <label for="updateMovieId">ID:</label>
+            <label for="updateMovieId">Movie ID:</label>
             <input
               type="text"
               placeholder="Enter Movie ID to update..."
@@ -164,10 +167,10 @@
         <h2>Delete a Movie</h2>
         <form id="form-delete">
           <div class="mb-3">
-            <label for="delIndex">Index:</label>
+            <label for="delIndex">Movie ID:</label>
             <input
               type="text"
-              placeholder="Index..."
+              placeholder="Movie ID..."
               name="index"
               id="delIndex"
             />
