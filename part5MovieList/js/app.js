@@ -272,6 +272,8 @@ function deleteClick() {
   let deleteIdInput = document.getElementById("delIndex");
   let movieIdToDelete = deleteIdInput.value;
 
+
+
   // search the index of the movie with matching MovieID
   const indexToDelete = movieList.movieList.findIndex(
     (movie) => movie.movieId === movieIdToDelete
